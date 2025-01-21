@@ -3,7 +3,9 @@
     {
       "Path": null,
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "api_url&"
+      ],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -12,15 +14,60 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "myEnv&1c505805-d901-46e0-af3d-1d43dc50c0a6",
+        "api_url&1c505805-d901-46e0-af3d-1d43dc50c0a6",
+        "firstInvoiceId&Sequence_1",
         "firstInvoice&Sequence_1",
         "invoiceObject&Sequence_1",
         "invoicesStatus&Sequence_1",
         "invoicesContent&Sequence_1",
         "myApi&Sequence_1",
-        "api_url&Sequence_7",
         "thisEnv&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "GetInvoiceId.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "invoiceArray&Sequence_1",
+        "firstInvoiceId&Sequence_1",
+        "invoiceStatus&Sequence_1",
+        "invoiceContent&Sequence_1",
+        "myEnv&1c505805-d901-46e0-af3d-1d43dc50c0a6",
+        "api_url&1c505805-d901-46e0-af3d-1d43dc50c0a6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_invoiceId"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Flowchart.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "invoiceId&Flowchart_1",
+        "myEnv&1c505805-d901-46e0-af3d-1d43dc50c0a6",
+        "api_url&1c505805-d901-46e0-af3d-1d43dc50c0a6"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "GetPDF.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "downloadedFile&Sequence_1",
+        "api_url&1c505805-d901-46e0-af3d-1d43dc50c0a6",
+        "myEnv&1c505805-d901-46e0-af3d-1d43dc50c0a6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_invoiceId"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

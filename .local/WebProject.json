@@ -5,7 +5,7 @@
     "ExpressionLanguage": "VisualBasic",
     "ProjectType": "Process",
     "Name": "OrderInvoiceCheck",
-    "LastModifiedTime": "2025-01-21T16:54:04.821294Z",
+    "LastModifiedTime": "2025-01-21T18:19:56.2377175Z",
     "CreationTime": "2025-01-21T10:48:57.4993192Z",
     "UserId": "4b7b0ece-668f-4e90-a500-023ae22c263d",
     "RootFolder": {
@@ -78,6 +78,11 @@
               "IsMain": false
             },
             {
+              "Id": "5396c685-c970-494d-b60a-501e532e2f56",
+              "Name": "globalVariables.json",
+              "IsMain": false
+            },
+            {
               "Id": "67c30ecd-1225-4348-8e46-d1c7857c3a7b",
               "Name": "CodedBindingsMetadata.json",
               "IsMain": false
@@ -128,8 +133,23 @@
           "IsMain": true
         },
         {
+          "Id": "098b0b91-3fc4-41f8-8c27-d8a601dcd1c6",
+          "Name": "GetInvoiceId.xaml",
+          "IsMain": false
+        },
+        {
+          "Id": "5e3c4f5c-68ab-4c20-a6d9-e275279973c6",
+          "Name": "GetPDF.xaml",
+          "IsMain": false
+        },
+        {
           "Id": "464956f2-9f24-49ef-9394-5484c2309ed3",
           "Name": "project.json",
+          "IsMain": false
+        },
+        {
+          "Id": "85e9eae6-b437-44c8-b9ca-28c37425d9f2",
+          "Name": "Flowchart.xaml",
           "IsMain": false
         }
       ]
@@ -156,20 +176,24 @@
     "DisableAutoUpdate": false
   },
   "OriginalFilesHash": {
-    "Main.xaml": "0YpuWwsqrfv5rJk5SpuoRJweyH81DBaiTozn9ZLJNEE=",
-    ".project/PackageBindingsMetadata.json": "aEUPZm0QgwQI6EBe7eQEhJbbhYqvRGWxcRzRVT0OFy8=",
-    ".codedworkflows/ConnectionsManager.cs": "flU8DIyhfpZSDFTHCiOZVHCggEPI3Rh1BLh0fULFjAs=",
-    ".tmh/config.json": "Tk6QDUUsqtifkyIEMEjvqL300ZUpxaIp15qlWlZ+18w=",
     "project.json": "GRFO8F4yBNLj4iFV0Bx2ILsbkRTGbU/vjIjYTmMPg+E=",
-    ".settings/Release/settings-82ca306a.json": "wW7p8opAxgjsb/RDAO397wAnWiGTiw2bTYZH58LTpCI=",
-    ".project/CodedBindingsMetadata.json": "RBNvo1WzZ4oRRq0W9+hknpT7T8If536DEMBg9hyq/4o=",
-    ".settings/Debug/settings-82ca306a.json": "wW7p8opAxgjsb/RDAO397wAnWiGTiw2bTYZH58LTpCI=",
-    ".project/JitCustomTypes.json": "YM1A6ccXSFYyBeG9gJucJt8cs/BE50eDc7+K4Kpzwys=",
-    ".codedworkflows/ConnectionsFactory.cs": "EMWZbcxcVKMuVUN/8ZeJRGTvTpARNQeQ32szTRhk8gw=",
+    ".project/PackageBindingsMetadata.json": "aEUPZm0QgwQI6EBe7eQEhJbbhYqvRGWxcRzRVT0OFy8=",
+    "GetInvoiceId.xaml": "XUWFVsGQy8UZDvZou5MDvP0Hr+mbMZUDAy9qkKQ68nY=",
+    "Main.xaml": "2CDGX/GZlfrRwJgM8+gQiUvmUJ6ebiXzANo+9SseTNk=",
+    ".objects/.type": "3CCz1dLN34L60zKCHKXppO/c7eSic6oZPStJW9zJKCU=",
     ".objects/.metadata": "GYeZt+UyoofYY4lmzg1hBN71RbJwV9v/liyW95W6BZU=",
+    ".project/globalVariables.json": "xqFRL1mvdDeWyGexAOpl74W66ZVTVq/5Q9kLXqGBMDQ=",
+    ".tmh/config.json": "Tk6QDUUsqtifkyIEMEjvqL300ZUpxaIp15qlWlZ+18w=",
+    "GetPDF.xaml": "aOHvc0EVgpq/7LetIdaVo8iBQsfoXvHzPSdphaNDr4E=",
+    ".settings/Debug/settings-82ca306a.json": "wW7p8opAxgjsb/RDAO397wAnWiGTiw2bTYZH58LTpCI=",
+    ".codedworkflows/ConnectionsManager.cs": "flU8DIyhfpZSDFTHCiOZVHCggEPI3Rh1BLh0fULFjAs=",
+    ".codedworkflows/ConnectionsFactory.cs": "EMWZbcxcVKMuVUN/8ZeJRGTvTpARNQeQ32szTRhk8gw=",
+    "Flowchart.xaml": "y9+GE2c8CbPlKpN2BM2nRPL70feMGAWWLvuO5oFbA10=",
+    ".project/JitCustomTypes.json": "YM1A6ccXSFYyBeG9gJucJt8cs/BE50eDc7+K4Kpzwys=",
     ".project/design.json": "tpigGYm5XaG029JmRVNbleDrxKui0uJxWXFRRvAf2I4=",
-    ".project/bookmarks.json": "BIn6NdKc4Ov1RW2pgY02XIXNBwB2/+k4s/X9Uab537k=",
-    ".objects/.type": "3CCz1dLN34L60zKCHKXppO/c7eSic6oZPStJW9zJKCU="
+    ".project/CodedBindingsMetadata.json": "RBNvo1WzZ4oRRq0W9+hknpT7T8If536DEMBg9hyq/4o=",
+    ".settings/Release/settings-82ca306a.json": "wW7p8opAxgjsb/RDAO397wAnWiGTiw2bTYZH58LTpCI=",
+    ".project/bookmarks.json": "BIn6NdKc4Ov1RW2pgY02XIXNBwB2/+k4s/X9Uab537k="
   },
   "OriginalFolders": [
     "C:\\Users\\Starstep\\Documents\\UiPath\\OrderInvoiceCheck\\.entities",
@@ -182,6 +206,9 @@
     "C:\\Users\\Starstep\\Documents\\UiPath\\OrderInvoiceCheck\\.tmh"
   ],
   "StudioWebFiles": [
+    "Flowchart.xaml",
+    "GetInvoiceId.xaml",
+    "GetPDF.xaml",
     "Main.xaml",
     "project.json",
     ".codedworkflows/ConnectionsFactory.cs",
@@ -191,6 +218,7 @@
     ".project/bookmarks.json",
     ".project/CodedBindingsMetadata.json",
     ".project/design.json",
+    ".project/globalVariables.json",
     ".project/JitCustomTypes.json",
     ".project/PackageBindingsMetadata.json",
     ".settings/Debug/settings-82ca306a.json",
@@ -198,7 +226,7 @@
     ".tmh/config.json"
   ],
   "StudioWebEmptyFolders": [],
-  "LockKey": "a7eec036-ffc8-4d83-8521-fe5b513a9908",
+  "LockKey": "9da3225a-98c4-4e71-9916-a9f07a557179",
   "LocalProjectPath": "C:\\Users\\Starstep\\Documents\\UiPath\\OrderInvoiceCheck",
   "ProjectId": "c2e362e4-43d7-4527-bbec-b59259f4bd89",
   "ProjectName": "OrderInvoiceCheck"
