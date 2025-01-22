@@ -15,6 +15,9 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "api_url&7793694f-e825-4f9b-ac41-c95023f38339",
+        "myEnv&7793694f-e825-4f9b-ac41-c95023f38339",
+        "jsonConvert&7793694f-e825-4f9b-ac41-c95023f38339",
         "thisEnv&Sequence_1",
         "myApi&Sequence_1",
         "invoicesContent&Sequence_1",
