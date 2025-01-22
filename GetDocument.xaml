@@ -136,23 +136,11 @@
       <Variable x:TypeArguments="x:String" Name="myXml" />
       <Variable x:TypeArguments="sx:XmlReader" Name="reader" />
       <Variable x:TypeArguments="x:Int32" Name="readIndex" />
-      <Variable x:TypeArguments="sd:DataTable" Name="table">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="new DataTable()" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Boolean" Name="insideTable">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="colIndex">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable()]" Name="table" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="insideTable" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="colIndex" />
       <Variable x:TypeArguments="x:String" Name="itemName" />
-      <Variable x:TypeArguments="x:Int32" Name="currencyAmount" />
+      <Variable x:TypeArguments="x:String" Name="currencyAmount" />
       <Variable x:TypeArguments="x:Int32" Name="quantity" />
       <Variable x:TypeArguments="x:String" Name="dtJson" />
       <Variable x:TypeArguments="x:String" Name="putInvoiceJson" />
@@ -166,20 +154,20 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="696,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Start GetPDF&quot;]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="696,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;invoiceId: &quot; &amp; in_invoiceId]" />
-    <ui:CommentOut DisplayName="Disabled activities" sap:VirtualizedContainerService.HintSize="696,252" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <uasf:DownloadFileFromUrl FileName="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="696,122.4" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" ResponseAttachment="[downloadedFile]" Url="[api_url &amp; &quot;/Invoice/file/&quot; &amp; in_invoiceId]" />
+    <ui:CommentOut DisplayName="Disabled activities" sap:VirtualizedContainerService.HintSize="696,303.2" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,173.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,224.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uasf:DownloadFileFromUrl FileName="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="449.6,113.6" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1" ResponseAttachment="[downloadedFile]" Url="[api_url &amp; &quot;/Invoice/file/&quot; &amp; in_invoiceId]" />
+          <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\Starstep\Desktop\faktura.docx" PathType="File" Resource="[testFile]" />
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="696,173.6" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\Starstep\Desktop\faktura.docx" PathType="File" Resource="[testFile]" />
-    <uascw:ExtractFiles DestinationFolder="{x:Null}" DestinationFolderInfo="{x:Null}" FileToExtract="{x:Null}" Password="{x:Null}" CodePage="Default" ConflictResolution="Replace" Content="[extractedContents]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="False" File="[testFile]" sap:VirtualizedContainerService.HintSize="696,122.4" sap2010:WorkflowViewState.IdRef="ExtractFiles_2" SkipUnsupportedFiles="False" />
+    <uascw:ExtractFiles DestinationFolder="{x:Null}" DestinationFolderInfo="{x:Null}" FileToExtract="{x:Null}" Password="{x:Null}" CodePage="Default" ConflictResolution="Replace" Content="[extractedContents]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="False" File="[downloadedFile]" sap:VirtualizedContainerService.HintSize="696,122.4" sap2010:WorkflowViewState.IdRef="ExtractFiles_2" SkipUnsupportedFiles="False" />
     <ui:ForEach x:TypeArguments="upr:ILocalResource" CurrentIndex="[extractedContentsIndex]" DisplayName="For Each currentFile" sap:VirtualizedContainerService.HintSize="696,988" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[extractedContents]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="upr:ILocalResource">
@@ -245,7 +233,7 @@
     <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="696,122.4" sap2010:WorkflowViewState.IdRef="DeserializeXml_2" XMLDocument="[theXml]" XMLString="[myXml]" />
     <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="False" ColumnName="ItemName" DataTable="[table]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="696,227.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
     <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="False" ColumnName="Quantity" DataTable="[table]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="696,227.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="False" DataTable="[table]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="696,227.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="False" DataTable="[table]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="696,227.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
       <ui:AddDataColumn.ColumnName>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">CurrencyAmount</Literal>
@@ -269,7 +257,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="696,3153.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[reader.Read()]" DisplayName="While" sap:VirtualizedContainerService.HintSize="696,3153.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="694.4,3023.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -384,10 +372,10 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <Assign sap:VirtualizedContainerService.HintSize="484.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_11">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Int32">[currencyAmount]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:String">[currencyAmount]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                            <InArgument x:TypeArguments="x:String">[Reader.Value]</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                       </Sequence>
@@ -522,9 +510,6 @@
           </If>
         </Sequence>
       </ui:InterruptibleWhile.Body>
-      <ui:InterruptibleWhile.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="reader.Read()" />
-      </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
     <Assign sap:VirtualizedContainerService.HintSize="696,113.6" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
@@ -561,6 +546,6 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="696,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;putStatus:&quot; &amp; putStatus &amp;&#xD;&#xA;&quot;putResponse:&quot; &amp; putResponse]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="696,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;putStatus:&quot; &amp; putStatus &amp;&#xA;&quot;putResponse:&quot; &amp; putResponse]" />
   </Sequence>
 </Activity>
